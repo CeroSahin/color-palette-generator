@@ -1,0 +1,69 @@
+{% include 'header.html' %}
+{% import 'bootstrap/wtf.html' as wtf %}
+
+
+    <div class="header-div">
+      <h1 class="main-header">ColPal</h1>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="about">
+    <div class="row">
+      <div class="col-lg-3" style="text-align: left;">
+        <h1 class="main-header">What do we do?</h1>
+        <p style="font-family: 'IBM Plex Serif', serif; line-height: 3rem;">
+          We generate a colour palette from your image that is just
+          the best fit for it so that you do not need to waste more
+          time deciding the theme.
+        </p>
+      </div>
+      <div class="col-lg-3">
+        <img class="test-img" src="https://i.pinimg.com/474x/16/13/43/161343bc6aab7ff40072f1a42eea363b.jpg" alt="green">
+      </div>
+      <div class="col-lg-3">
+        <img class="test-img" src="https://i.pinimg.com/474x/ae/5f/e2/ae5fe2d9f063b0ab15e16292e8999d8f.jpg" alt="green">
+      </div>
+      <div class="col-lg-3">
+        <img class="test-img" src="https://i.pinimg.com/474x/eb/cb/8e/ebcb8ed551a982b22c40c93b233f6bbc.jpg" alt="green">
+      </div>
+    </div>
+  </section>
+
+    <!-- Try It Out Section -->
+  <section id="try" class="try">
+    <div class="row">
+      <div class="display-img col-lg-6">
+        {% if all_files is not none %}
+        <img class="user-img" src="{{ url_for('get_file', filename=all_files[0]) }}" alt="user image">
+        {% else %}
+        <img class="user-img" src="https://i.pinimg.com/474x/24/f7/88/24f7881cd48df20ab782864b7736c15b.jpg" alt="default">
+        {% endif %}
+      </div>
+      <div class="col-lg-6">
+        <div style="padding: 5%;">
+          <div style="padding: 5% 0;">
+            <form method="post" action="{{ url_for('home', _anchor='try') }}" enctype="multipart/form-data">
+              {{ form.csrf_token }}
+              {{ form.photo }}
+              {{ form.submit(size=10) }}
+            </form>
+          </div>
+        </div>
+        {% if color_palette |length > 0 %}
+        <h1 class="main-header">Your Colour Palette</h1>
+        {% for color in color_palette %}
+        <div>
+          <div style="float:left; margin-right:3px;">
+          <div class="color" style="width:100px; height:30px; background-color: {{ color }};)"></div>
+          <p >{{ color }}</p>
+            </div>
+        </div>
+        {% endfor %}
+        {% endif %}
+      </div>
+    </div>
+  </section>
+
+
+{% include 'footer.html' %}

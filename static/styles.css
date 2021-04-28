@@ -1,0 +1,91 @@
+body {
+  text-align: center;
+  height: 100%;
+}
+
+/* Home Section */
+.home {
+  background-image: url("https://yunti.files.wordpress.com/2016/09/manzara_07_tam35-blogspot-com.jpg");
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+}
+
+.navbar-content {
+  font-family: "PT Serif", serif;
+}
+
+.bg-light {
+  padding: 5%;
+}
+
+.header-div {
+  padding: 19%;
+}
+
+.main-header {
+  color: white;
+  font-family: "DM Serif Display", serif;
+  font-size: 3rem;
+  letter-spacing: 0.5rem;
+}
+
+/* About Us Section */
+.about {
+  padding: 7% 10%;
+  background-color: #d8e3e7;
+}
+
+.about .main-header {
+  color: black;
+  letter-spacing: 0;
+}
+
+.test-img {
+  width: 200px;
+  height: 400px;
+}
+
+/* Try It Out Section */
+.try {
+  padding: 3% 10%;
+  background-color: #c8eed9;
+}
+
+.display-img {
+  padding: 0 5% 5% 0;
+}
+
+
+.user-img {
+  height: 600px;
+  width: 80%;
+}
+
+.try .main-header {
+  color: black;
+  letter-spacing: 0;
+  font-size: 2rem;
+}
+
+/* Contact Section */
+footer {
+  padding: 7% 15%;
+  background-color: #132c33;
+}
+
+.media-links {
+  padding: 3px 5px;
+  color: #d8e3e7;
+}
+
+.media-links :hover {
+  color: #98ddca;
+}
+
+.footer-msg {
+  color: white;
+  padding-top: 5px;
+}
